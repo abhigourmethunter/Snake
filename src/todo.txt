@@ -1,0 +1,19 @@
+I have created a stub for the whole project basically
+Read through what is there
+
+Code is clear and setup is as simple as possible
+Read the comments for clarity
+
+MOST IMPORTANTLY
+Look up anything that you don't understand yet
+Things like why there are header files or what is #ifndef and why it is required
+Ask an LLM if so needed
+Very small and easy to understand things these all are
+
+
+TODOS:
+
+- Game logic
+- Drawing logic
+- Implement dynamic array (low priority because massive array can do the job i think)
+- Other states like pausing and game over screen and home screen all that all that but lowest priority because none of that is required to claim that a working snake game is complete. all that is required is a snake and a food and a growing eating snake that dies due to its own gluttony
