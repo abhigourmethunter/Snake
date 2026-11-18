@@ -1,19 +1,20 @@
-I have created a stub for the whole project basically
-Read through what is there
-
-Code is clear and setup is as simple as possible
-Read the comments for clarity
-
-MOST IMPORTANTLY
-Look up anything that you don't understand yet
-Things like why there are header files or what is #ifndef and why it is required
-Ask an LLM if so needed
-Very small and easy to understand things these all are
-
-
 TODOS:
-
 - Game logic
 - Drawing logic
-- Implement dynamic array (low priority because massive array can do the job i think)
+- Implement snake points mechanism
 - Other states like pausing and game over screen and home screen all that all that but lowest priority because none of that is required to claim that a working snake game is complete. all that is required is a snake and a food and a growing eating snake that dies due to its own gluttony
+
+Notes:
+- snake start pos and direction is hardcoded for now - must be randomized at start
+- i have written out the logic for moving the snake, please check if this makes sense. checking for inputs
+  and therefore having to add corners is not there yet, but should be an easy addition.
+  just check the implementation of everything and so you can see where exactly to put it if you do want to add it.
+
+- checking for collision between snake head and its body was trivial if we were storing all the points
+  however it now involves some math. for every pair of points we will have to check if the snake head lies
+  on the line that is formed between them.
+  maybe a better way would be to simply check the colour of that point. but that would involve drawing body first
+  and also drawing it before the checking logic which would mean we are basically relying on a previous frame
+  drawing, leading to edge cases like dying even when you actually missed it by one pixel (the quantum hasn't
+  been decided yet so i am just using pixel as the atomic value here)
+  so yeah i don't prefer this. i prefer if the logic doesn't rely on the frame drawing at all.
