@@ -19,5 +19,7 @@ typedef struct snake{
 void initializeSnake(Snake *s);
 void setDirection(Snake *s, Direction dir);
 void moveSnake(Snake *s, Direction dir);
+bool collideSnake(Snake *s, Point p);
+bool biteSnake(Snake *s);
 
 #endif
