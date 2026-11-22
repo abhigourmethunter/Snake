@@ -10,7 +10,7 @@
 
 typedef struct snake{
     Direction direction;
-    SnakeLocation *location;
+    SnakeLocation location;
 } Snake;
 
 

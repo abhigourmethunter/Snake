@@ -4,14 +4,14 @@
 void initializeSnake(Snake *s){
     // hardcoded for now
     s->direction = LEFT;
-    initializeLocationObject(s->location);
+    initializeLocationObject(&s->location);
 }
 void setDirection(Snake* s, Direction dir){
     s->direction = dir;
 }
 
 void moveSnake(Snake *s, Direction dir){
-    Point newHead = s->location->head;
+    Point newHead = s->location.head;
     switch(dir){
         case UP:
         newHead.y--;
@@ -26,5 +26,5 @@ void moveSnake(Snake *s, Direction dir){
         newHead.x--;
         break;
     }   
-    updateSnakeLocation(s->location, newHead);
+    updateSnakeLocation(&s->location, newHead);
 }
