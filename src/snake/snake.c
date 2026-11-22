@@ -49,19 +49,19 @@ bool isCollinear(Point a, Point b, Point p){
 
 // can be optimized but this is a generalized function for both snake death and food placement
 bool onSnake(Snake *s, Point p){
-    int n = len(s->location->corners);
+    int n = len(s->location.corners);
     
-    if (isCollinear(s->location->head, s->location->corners[0], p)){
+    if (isCollinear(s->location.head, s->location.corners[0], p)){
         return true;
     }
 
     for(int i = 0; i < n - 1; i++){
-        if (isCollinear(s->location->corners[i], s->location->corners[i+1], p)){
+        if (isCollinear(s->location.corners[i], s->location.corners[i+1], p)){
             return true;
         }
     }
 
-    if (isCollinear(s->location->corners[n-1], s->location->tail, p)){
+    if (isCollinear(s->location.corners[n-1], s->location.tail, p)){
         return true;
     }
 
@@ -69,7 +69,7 @@ bool onSnake(Snake *s, Point p){
 }
 
 bool biteSnake(Snake *s){
-    if (onSnake(s, s->location->head)){
+    if (onSnake(s, s->location.head)){
         return true;
     }
 
