@@ -14,8 +14,8 @@ typedef struct game{
 } Game;
 
 
-void initialize(Game *game);
-void update(Game *game);
-void draw(Game *game);
+void initializeGame(Game *game);
+void updateGame(Game *game);
+void drawGame(Game *game);
 
 #endif

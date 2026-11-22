@@ -1,22 +1,23 @@
 #include <raylib.h>
+#include <game.h>
 
-// these are to be implemented too (haha these comments are getting out of hand)
-int updateGame();
-int drawGame();
 
 int main(){
 
     SetTargetFPS(60);
 
+    Game game;
+    initializeGame(&game);
+
     InitWindow(500, 600, "Snake");
     
     while (!WindowShouldClose())
     {
-        updateGame();
+        updateGame(&game);
 
         BeginDrawing();
-        ClearBackground(BLACK);
-        drawGame();
+            ClearBackground(BLACK);
+            drawGame(&game);
         EndDrawing();
     }
 
